@@ -14,9 +14,9 @@ class HomeView extends GetView<HomeController> {
         body: controller.obx((state) {
           return ListView.builder(
             itemBuilder: (context, i) => ListTile(
-              title: Text('haha'),
+              title: Text(state!.items![i].login),
             ),
-            itemCount: 2,
+            itemCount: state!.items!.length,
           );
         },
             onEmpty: Center(child: Text('Empty Data')),
